@@ -47,7 +47,7 @@ function Dashboard({ statecompany }) {
                 </div>
             </div>
             <p className="text-center ">-------------------------------------</p>
-         <div className="mt-3 p-2"><WEAREGOOD/></div>
+         {/* <div className="mt-3 p-2"><WEAREGOOD/></div> */}
             <Footer />
         </>
     )
