@@ -11,7 +11,6 @@ function App() {
     <div>
       <Header com={company}/>
       <Dashboard com={company}/>
-      {/* <footer name={company}/> */}
       <Footer com={company}/>
     </div>
   );

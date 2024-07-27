@@ -2,21 +2,20 @@ import {React, useState} from "react";
 import TypeWriter from "./TypeWriter";
 import Lottie from "react-lottie";
 import animationData from "../Common/Animation.json";
-import Header from '../Common/Header';
-import Footer from '../Common/Footer';
 import WEAREGOOD from "../WE_ARE_GOOD/WEAREGOOD";
 import '../Dashboard/Dashboard.css';
+import Contact from '../Contact/Contact';
 
 function Dashboard(props) {
    
   return (
     <>
       {/* <Header name={props.com}/> */}
-      <div className="container mx-auto h-auto md:h-[60vh]">
+      <div className="container mx-auto h-auto md:h-[65vh]">
         <div className="bg-white h-full p-4 md:p-0">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="md:ml-3 p-6">
-              <h2 className="text-center text-4xl mb-3 font-bold text-blue-800 drop-shadow-md underline decoration-pink-500">
+              <h2 className="text-center text-4xl mb-3 font-bold text-blue-800  underline decoration-pink-500">
                 <span className="inline-block bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text">
                  {props.com}
                 </span>
@@ -39,15 +38,18 @@ function Dashboard(props) {
                 </div>
               </div>
             </div>
-            <div className="h-[22rem] w-full mt-[8vh] md:mt-0">
+            <div className="h-[22rem] w-full mt-[8vh]">
               <Lottie options={{ animationData }} />
             </div>
           </div>
         </div>
       </div>
-      <hr className="my-8 hidden md:block" /> {/* Hide on small screens */}
+      <hr className="my-8 hidden md:block" />
       <div className="mt-8">
         <WEAREGOOD />
+      </div>
+      <div className="mt-2">
+       <Contact/>
       </div>
       {/* <Footer/> */}
     </>
