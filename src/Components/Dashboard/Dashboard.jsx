@@ -1,4 +1,4 @@
-import {React, useState} from "react";
+import React from "react";
 import TypeWriter from "./TypeWriter";
 import Lottie from "react-lottie";
 import animationData from "../Common/Animation.json";

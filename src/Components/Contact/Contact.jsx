@@ -1,15 +1,20 @@
-import { React, useState } from "react";
+import React, { useState } from 'react';
 import { Button, Input, Textarea, Typography } from "@material-tailwind/react";
-import Map from './Map'
+import Map from './Map';
+import { toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-export function ContactSection14() {
-
+function Contact() {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
         email: '',
-        message: ''
+        message: '',
+        engagementType: ''
     });
+
+    const [selectedOption, setSelectedOption] = useState(''); // state for selected option
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -19,17 +24,53 @@ export function ContactSection14() {
         });
     };
 
-    // const handleClick = () => {
-    //     alert(formData.firstName, formData.lastName)
-    // }
 
-    const handleClick = () => {
-        const { firstName, lastName, email, message } = formData;
-        alert(`First Name: ${firstName}\nLast Name: ${lastName}\nEmail: ${email}\nMessage: ${message}`);
+
+            // Dont touch here
+    const handleOptionClick = (option) => {
+        setSelectedOption(option);
+        setFormData((prevData) => ({
+            ...prevData,
+            engagementType: option
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch('https://formspree.io/f/mjkbydkp', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                toast.success('Message sent successfully!');
+                setFormData({
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    message: '',
+                    engagementType: ''
+                }); // for the Clear form fields()
+            }else 
+                {
+                    toast.error('Failed to send the message. Please try again.');
+                }
+        } catch (error)
+            {
+                console.error('Error:', error);
+                toast('An error occurred. Please try again.');
+            }
     };
 
     return (
+        
         <section className="px-6 py-6 border border-gray-600 rounded-lg shadow-lg mb-2">
+            <ToastContainer />
             <div className="container mx-auto text-center">
                 <Typography
                     variant="h5"
@@ -56,7 +97,7 @@ export function ContactSection14() {
                     </div>
 
                     <form
-                        action="#"
+                        onSubmit={handleSubmit}
                         className="flex flex-col gap-3 max-w-lg w-full p-4 bg-white rounded-lg shadow-md mx-auto"
                     >
                         <Typography
@@ -67,10 +108,18 @@ export function ContactSection14() {
                         </Typography>
 
                         <div className="flex gap-2">
-                            <Button variant="outlined" className="flex-1">
+                            <Button
+                                variant={selectedOption === 'General Inquiry' ? 'filled' : 'outlined'}
+                                className="flex-1"
+                                onClick={() => handleOptionClick('General Inquiry')}
+                            >
                                 General Inquiry
                             </Button>
-                            <Button variant="outlined" className="flex-1">
+                            <Button
+                                variant={selectedOption === 'Product Support' ? 'filled' : 'outlined'}
+                                className="flex-1"
+                                onClick={() => handleOptionClick('Product Support')}
+                            >
                                 Product Support
                             </Button>
                         </div>
@@ -173,15 +222,16 @@ export function ContactSection14() {
                         </div>
 
                         <Button
+                            type="submit"
                             className="w-full py-3 text-lg font-semibold text-white bg-blue-700 rounded-md hover:bg-blue-800 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                            onClick={handleClick}>Send Message
+                        >
+                            Send Message
                         </Button>
                     </form>
-
                 </div>
             </div>
         </section>
     );
 }
 
-export default ContactSection14;
+export default Contact;
