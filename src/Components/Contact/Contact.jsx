@@ -26,7 +26,7 @@ function Contact() {
 
 
 
-            // Dont touch here
+    // Dont touch here
     const handleOptionClick = (option) => {
         setSelectedOption(option);
         setFormData((prevData) => ({
@@ -56,20 +56,18 @@ function Contact() {
                     message: '',
                     engagementType: ''
                 }); // for the Clear form fields()
-            }else 
-                {
-                    toast.error('Failed to send the message. Please try again.');
-                }
-        } catch (error)
-            {
-                console.error('Error:', error);
-                toast('An error occurred. Please try again.');
+            } else {
+                toast.error('Failed to send the message. Please try again.');
             }
+        } catch (error) {
+            console.error('Error:', error);
+            toast('An error occurred. Please try again.');
+        }
     };
 
     return (
-        
-        <section className="px-6 py-6 border border-gray-600 rounded-lg shadow-lg mb-2">
+
+        <section className="px-6 py-6 rounded-lg shadow-lg mb-2">
             <ToastContainer />
             <div className="container mx-auto text-center">
                 <Typography
@@ -223,7 +221,7 @@ function Contact() {
 
                         <Button
                             type="submit"
-                            className="w-full py-3 text-lg font-semibold text-white bg-blue-700 rounded-md hover:bg-blue-800 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                            className="w-fugill py-3 text-lg font-semibold text-white bg-blue-700 rounded-md hover:bg-blue-800 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                         >
                             Send Message
                         </Button>

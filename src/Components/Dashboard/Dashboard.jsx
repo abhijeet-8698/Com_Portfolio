@@ -5,13 +5,14 @@ import animationData from "../Common/Animation.json";
 import WEAREGOOD from "../WE_ARE_GOOD/WEAREGOOD";
 import '../Dashboard/Dashboard.css';
 import Contact from '../Contact/Contact';
+import Services from "../Services/Services";
 
 function Dashboard(props) {
    
   return (
     <>
       {/* <Header name={props.com}/> */}
-      <div className="container mx-auto h-auto md:h-[65vh]">
+      <div className="container mx-auto h-auto md:h-[65vh] bg-gradient-to-r from-pink-500 to-purple-500">
         <div className="bg-white h-full p-4 md:p-0">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="md:ml-3 p-6">
@@ -48,6 +49,10 @@ function Dashboard(props) {
       <div className="mt-8">
         <WEAREGOOD />
       </div>
+      <div className="mt-6">
+       <Services/>
+      </div>
+     
       <div className="mt-2">
        <Contact/>
       </div>
@@ -56,4 +61,4 @@ function Dashboard(props) {
   );
 }
 
-export default Dashboard;
+export default Dashboard; 
