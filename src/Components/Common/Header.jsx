@@ -1,22 +1,53 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = (props) => {
+  const navigate = useNavigate();
+
+  const handleProposalRequest = () => {
+    // alert("Proposal request");
+    navigate('/contact'); // Navigate to a specific route - constact_page
+  }
+
+  
   return (
-    <header className="bg-gray-900 text-white py-4 px-8">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center">
-          <img src="https://i.imgur.com/j9W8G04.png" alt="Manatine Logo" className="h-8 mr-4" />
-          <h1 className="text-2xl font-bold">{props.com}</h1>
-        </div>
-        <nav className="flex space-x-6">
-          <a href="#" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out">Features</a>
-          <a href="#" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out">Pricing</a>
-          <a href="#" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out">Learn</a>
-          <a href="#" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out">Community</a>
-          <a href="#" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out">Contact</a>
-        </nav>
+    <nav className="bg-black fixed w-full top-0 z-50">
+      <div className="container mx-auto flex items-center justify-between p-4">
+        <a className="flex items-center">
+          {/* <img className="pb-1" src="assets/img/logo.png" alt="logo" /> */}
+          <h2 className="text-white">{props.com}</h2>
+        </a>
+        <button className="text-white lg:hidden p-2" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="sr-only">Open main menu</span>
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+       <div className="hidden lg:flex flex-grow items-center" id="navbarSupportedContent">
+          <ul className="flex space-x-4 ml-auto">
+            <li className="relative group">
+              <Link className="text-white" to="/" role="button">Home</Link>
+            </li>
+            <li className="relative group">
+              <Link className="text-white" to="/services" role="button">Services</Link>
+            </li>
+            <li>
+              <a className="text-white" href="#menu">Menu</a>
+            </li>
+            <li className="relative group">
+              <Link className="text-white" to="/contact" role="button">Contact</Link>
+            </li>
+          </ul>
+          <ul className="flex items-center ml-8">
+            <li>
+              <button onClick={handleProposalRequest} className="bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg rounded-full px-4 py-2">
+                Request for Proposal
+              </button>
+            </li>
+          </ul>
+        </div> 
       </div>
-    </header>
+    </nav>
   );
 };
 

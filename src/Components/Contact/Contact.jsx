@@ -24,8 +24,6 @@ function Contact() {
         });
     };
 
-
-
     // Dont touch here
     const handleOptionClick = (option) => {
         setSelectedOption(option);
@@ -67,45 +65,43 @@ function Contact() {
 
     return (
 
-        <section className="px-6 py-6 rounded-lg shadow-lg mb-2">
+        <section className="px-4 py-4 rounded-lg shadow-lg mb-1">
             <ToastContainer />
             <div className="container mx-auto text-center">
                 <Typography
                     variant="h5"
                     color="blue-gray"
-                    className="mb-2 text-3xl"
+                    className="mb-1 text-3xl"
                 >
                     Contact Us
                 </Typography>
+
                 <Typography
                     variant="h1"
                     color="blue-gray"
-                    className="mb-4 !text-3xl lg:!text-5xl"
+                    className="mb-1 text-3xl"
                 >
                     We&apos;re Here to Help You..!
                 </Typography>
-                <Typography className="mb-10 font-normal !text-lg lg:mb-20 mx-auto max-w-3xl !text-gray-500">
-                    Whether it&apos;s a question about our services, a request for
-                    technical assistance, or suggestions for improvement, our team is
-                    eager to hear from you.
-                </Typography>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center justify-center">
-                    <div className="w-full flex justify-center items-center">
+
+                <p>----------------------------------------------</p>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 items-center justify-center ">
+                    <div className="w-full flex justify-start items-stat">
                         <Map />
                     </div>
 
                     <form
                         onSubmit={handleSubmit}
-                        className="flex flex-col gap-3 max-w-lg w-full p-4 bg-white rounded-lg shadow-md mx-auto"
+                        className="flex flex-col gap-1 max-w-lg w-full p-4 bg-gray-200 rounded-lg shadow-md mx-auto"
                     >
                         <Typography
                             variant="small"
-                            className="text-left text-lg font-semibold text-gray-700"
+                            className="text-left text-lg font-semibold text-gray-700 mb-3"
                         >
                             Select Options for Business Engagement
                         </Typography>
 
-                        <div className="flex gap-2">
+                        <div className="flex gap-3 mb-3">
                             <Button
                                 variant={selectedOption === 'General Inquiry' ? 'filled' : 'outlined'}
                                 className="flex-1"
@@ -122,106 +118,94 @@ function Contact() {
                             </Button>
                         </div>
 
-                        <div className="grid grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-2">
+                        <div className="grid grid-cols-1 gap-3 lg:grid-cols-2 lg:gap-4 mb-3">
                             <div>
                                 <Typography
                                     variant="small"
-                                    className="mb-2 text-left text-base font-medium text-gray-900"
+                                    className="mb-1 text-left text-base font-medium text-gray-900"
                                 >
-                                    First Name
+                                    First Name <span className="text-red-500">*</span>
                                 </Typography>
                                 <Input
                                     color="gray"
-                                    size="lg"
+                                    size="md"
                                     placeholder="First Name"
                                     name="firstName"
                                     value={formData.firstName}
                                     onChange={handleChange}
-                                    className="w-full p-3 border border-gray-300 rounded-md focus:border-gray-600 focus:ring-0"
-                                    containerProps={{
-                                        className: "w-full",
-                                    }}
-                                    labelProps={{
-                                        className: "hidden",
-                                    }}
+                                    className="w-full p-2 border border-gray-300 rounded-md focus:border-gray-600 focus:ring-0"
+                                    containerProps={{ className: "w-full" }}
+                                    labelProps={{ className: "hidden" }}
+                                    required
                                 />
                             </div>
                             <div>
                                 <Typography
                                     variant="small"
-                                    className="mb-2 text-left text-base font-medium text-gray-900"
+                                    className="mb-1 text-left text-base font-medium text-gray-900"
                                 >
-                                    Last Name
+                                    Last Name <span className="text-red-500">*</span>
                                 </Typography>
                                 <Input
                                     color="gray"
-                                    size="lg"
+                                    size="md"
                                     placeholder="Last Name"
                                     name="lastName"
                                     value={formData.lastName}
                                     onChange={handleChange}
-                                    className="w-full p-3 border border-gray-300 rounded-md focus:border-gray-600 focus:ring-0"
-                                    containerProps={{
-                                        className: "w-full",
-                                    }}
-                                    labelProps={{
-                                        className: "hidden",
-                                    }}
+                                    className="w-full p-2 border border-gray-300 rounded-md focus:border-gray-600 focus:ring-0"
+                                    containerProps={{ className: "w-full" }}
+                                    labelProps={{ className: "hidden" }}
+                                    required
                                 />
                             </div>
                         </div>
 
-                        <div>
+                        <div className="mb-3">
                             <Typography
                                 variant="small"
-                                className="mb-2 text-left text-base font-medium text-gray-900"
+                                className="mb-1 text-left text-base font-medium text-gray-900"
                             >
-                                Your Email
+                                Email <span className="text-red-500">*</span>
                             </Typography>
                             <Input
                                 color="gray"
-                                size="lg"
+                                size="md"
                                 placeholder="name@email.com"
                                 name="email"
                                 value={formData.email}
                                 onChange={handleChange}
-                                className="w-full p-3 border border-gray-300 rounded-md focus:border-gray-600 focus:ring-0"
-                                containerProps={{
-                                    className: "w-full",
-                                }}
-                                labelProps={{
-                                    className: "hidden",
-                                }}
+                                className="w-full p-2 border border-gray-300 rounded-md focus:border-gray-600 focus:ring-0"
+                                containerProps={{ className: "w-full" }}
+                                labelProps={{ className: "hidden" }}
+                                required
                             />
                         </div>
 
-                        <div>
+                        <div className="mb-3">
                             <Typography
                                 variant="small"
-                                className="mb-2 text-left text-base font-medium text-gray-900"
+                                className="mb-1 text-left text-base font-medium text-gray-900"
                             >
-                                Your Message
+                                Message <span className="text-red-500">*</span>
                             </Typography>
                             <Textarea
-                                rows={4}
+                                rows={3}
                                 color="gray"
                                 placeholder="Message"
                                 name="message"
                                 value={formData.message}
                                 onChange={handleChange}
-                                className="w-full p-3 border border-gray-300 rounded-md focus:border-gray-600 focus:ring-0"
-                                containerProps={{
-                                    className: "w-full",
-                                }}
-                                labelProps={{
-                                    className: "hidden",
-                                }}
+                                className="w-full p-2 border border-gray-300 rounded-md focus:border-gray-600 focus:ring-0"
+                                containerProps={{ className: "w-full" }}
+                                labelProps={{ className: "hidden" }}
+                                required
                             />
                         </div>
 
                         <Button
                             type="submit"
-                            className="w-fugill py-3 text-lg font-semibold text-white bg-blue-700 rounded-md hover:bg-blue-800 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                            className="w-full py-2 text-lg font-semibold text-white bg-blue-700 rounded-md hover:bg-blue-800 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                         >
                             Send Message
                         </Button>

@@ -1,8 +1,8 @@
 import React from "react";
 
-function Services() {
+function Services(props) {
   return (
-    <div className="container mx-auto p-4 border-2">
+    <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold text-center mb-8">
         Our Services
       </h1>
@@ -10,12 +10,12 @@ function Services() {
         <div className="rounded-md shadow-md p-4 bg-blue-100 hover:bg-blue-200">
           <div className="flex justify-center mb-4">
             <img
-              src="./WEB2.png"
+              src="./Web_Design.svg"
               alt="Web Design"
               className="w-20 h-20"
             />
           </div>
-          <h2 className="text-xl font-bold mb-2">Web Design</h2>
+          <h2 className="text-xl font-bold mb-2">UI/UX Design</h2>
           <p className="text-gray-600">
             We create beautiful and functional websites that meet your business
             needs.
@@ -24,20 +24,20 @@ function Services() {
         <div className="rounded-md shadow-md p-4 bg-green-100 hover:bg-green-200">
           <div className="flex justify-center mb-4">
             <img
-              src="/support.png"
-              alt="24/7 Free Support"
+              src="/App_Dev.svg"
+              alt="App Development"
               className="w-20 h-20"
             />
           </div>
-          <h2 className="text-xl font-bold mb-2">24/7 Free Support</h2>
+          <h2 className="text-xl font-bold mb-2">App Development</h2>
           <p className="text-gray-600">
-            We are available 24/7 to answer your questions and provide support.
+            We build custom applications to meet your business needs.
           </p>
         </div>
         <div className="rounded-md shadow-md p-4 bg-red-100 hover:bg-red-200">
           <div className="flex justify-center mb-4">
             <img
-              src="/Web_Dev.png"
+              src="/Web_Dev.svg"
               alt="Web Development"
               className="w-20 h-20"
             />
@@ -51,8 +51,20 @@ function Services() {
         <div className="rounded-md shadow-md p-4 bg-yellow-100 hover:bg-yellow-200">
           <div className="flex justify-center mb-4">
             <img
-              src="/respo.png"
-              alt="100% Responsive Websites"
+              src="/Custom.svg"
+              alt="CRM Softwares"
+              className="w-20 h-20"
+            />
+          </div>
+          <h2 className="text-xl font-bold mb-2">Custom Software Solutions</h2>
+          <p className="text-gray-600">
+            We develop tailor-made software to meet your specific business needs, from concept to deployment.</p>
+        </div>
+        <div className="rounded-md shadow-md p-4 bg-green-100 hover:bg-green-200">
+          <div className="flex justify-center mb-4">
+            <img
+              src="/Responsive.svg"
+              alt="Responsive Websites"
               className="w-20 h-20"
             />
           </div>
@@ -65,31 +77,57 @@ function Services() {
         <div className="rounded-md shadow-md p-4 bg-purple-100 hover:bg-purple-200">
           <div className="flex justify-center mb-4">
             <img
-              src="/content.png"
-              alt="Content Writing"
+              src="/SEO.svg"
+              alt="SEO"
               className="w-20 h-20"
             />
           </div>
-          <h2 className="text-xl font-bold mb-2">Content Writing</h2>
+          <h2 className="text-xl font-bold mb-2">SEO</h2>
           <p className="text-gray-600">
-            We create engaging and informative content that will help you reach
-            your target audience.
+            We optimize your site to improve visibility and reach your target audience.
           </p>
         </div>
         <div className="rounded-md shadow-md p-4 bg-pink-100 hover:bg-pink-200">
           <div className="flex justify-center mb-4">
             <img
-              src="/logo-design.svg"
-              alt="Logo Designs"
+              src="/Digi_Mark.svg"
+              alt="Digital Marketing"
               className="w-20 h-20"
             />
           </div>
-          <h2 className="text-xl font-bold mb-2">Logo Designs</h2>
+          <h2 className="text-xl font-bold mb-2">Digital Marketing</h2>
           <p className="text-gray-600">
-            We create unique and memorable logos that will help your brand stand
-            out.
+            We create marketing strategies to enhance your online presence.
           </p>
         </div>
+        <div className="rounded-md shadow-md p-4 bg-yellow-100 hover:bg-yellow-200">
+          <div className="flex justify-center mb-4">
+            <img
+              src="/Gra_Design.svg"
+              alt="Graphics Design"
+              className="w-20 h-20"
+            />
+          </div>
+          <h2 className="text-xl font-bold mb-2">Graphics Design</h2>
+          <p className="text-gray-600">
+            We design visually appealing graphics for your brand.
+          </p>
+        </div>
+
+        <div className="rounded-md shadow-md p-4 bg-blue-100 hover:bg-blue-200">
+          <div className="flex justify-center mb-4">
+            <img
+              src="/Cloud.svg"
+              alt="CRM Softwares"
+              className="w-20 h-20"
+            />
+          </div>
+          <h2 className="text-xl font-bold mb-2">Cloud Services</h2>
+          <p className="text-gray-600">
+            We design visually appealing graphics for your brand.
+          </p>
+        </div>
+
       </div>
     </div>
   );

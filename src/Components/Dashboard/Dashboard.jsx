@@ -4,11 +4,9 @@ import Lottie from "react-lottie";
 import animationData from "../Common/Animation.json";
 import WEAREGOOD from "../WE_ARE_GOOD/WEAREGOOD";
 import '../Dashboard/Dashboard.css';
-import Contact from '../Contact/Contact';
-import Services from "../Services/Services";
 
 function Dashboard(props) {
-   
+
   return (
     <>
       {/* <Header name={props.com}/> */}
@@ -18,10 +16,10 @@ function Dashboard(props) {
             <div className="md:ml-3 p-6">
               <h2 className="text-center text-4xl mb-3 font-bold text-blue-800  underline decoration-pink-500">
                 <span className="inline-block bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text">
-                 {props.com}
+                  {props.com}
                 </span>
               </h2>
-              <div className="font-mono flex items-start justify-start mt-8 text-xl">
+              <div className="font-mono flex items-start justify-start mt-6 text-xl">
                 We are &nbsp;
                 <span className="font-bold text-blue-500">
                   <TypeWriter />
@@ -41,21 +39,21 @@ function Dashboard(props) {
             </div>
             <div className="h-[22rem] w-full mt-[8vh]">
               <Lottie options={{ animationData }} />
+              {/* <div className="flex justify-end items-end absolute bottom-5 right-10 p-4">
+                <img
+                  src="/ChatBot.svg"
+                  alt="ChatBot"
+                  className="w-20 h-30 rounded-full object-cover bg-blue-700 hover:bg-blue-200" 
+                />
+              </div> */}
+
             </div>
           </div>
         </div>
       </div>
-      <hr className="my-8 hidden md:block" />
-      <div className="mt-8">
-        <WEAREGOOD />
-      </div>
-      <div className="mt-6">
-       <Services/>
-      </div>
-     
-      <div className="mt-2">
-       <Contact/>
-      </div>
+      {/* <hr className="my-9" /> */}
+      <p className="mt-14 text-center">----------------------------------------------------</p>
+      <div className="mt-8"><WEAREGOOD /></div>
       {/* <Footer/> */}
     </>
   );
