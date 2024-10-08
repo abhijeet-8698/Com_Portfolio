@@ -7,7 +7,7 @@ import EmailIcon from '@mui/icons-material/Email';
 function Footer(props) {
     return (
         <>
-            <div className="relative bg-gray-900 text-white overflow-hidden">
+            <div className="relative bg-gray-900 text-white overflow-hidden rounded-2xl shadow-lg">
                 <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 transform rotate-45 opacity-25"></div>
                     <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 transform rotate-45 opacity-25"></div>
@@ -24,11 +24,11 @@ function Footer(props) {
                         {/* Column 2 - Navigation Links */}
                         <div className="flex flex-col items-center md:justify-center">
                             <div className="mt-4 md:mt-0">
-                                <div className="mb-2"><a href="#" className="text-white hover:text-blue-400 transition duration-300">Home</a></div>
-                                <div className="mb-2"><a href="#" className="text-white hover:text-blue-400 transition duration-300">About</a></div>
-                                <div className="mb-2"><a href="#" className="text-white hover:text-blue-400 transition duration-300">Services</a></div>
-                                <div className="mb-2"><a href="#" className="text-white hover:text-blue-400 transition duration-300">Contact</a></div>
-                                <div className="mb-2"><a href="#" className="text-white hover:text-blue-400 transition duration-300">Careers</a></div>
+                                <div className="mb-2"><a href="#" className="text-white hover:text-blue-400 transition duration-300 font-semibold">Home</a></div>
+                                <div className="mb-2"><a href="#" className="text-white hover:text-blue-400 transition duration-300 font-semibold">About</a></div>
+                                <div className="mb-2"><a href="#" className="text-white hover:text-blue-400 transition duration-300 font-semibold">Services</a></div>
+                                <div className="mb-2"><a href="#" className="text-white hover:text-blue-400 transition duration-300 font-semibold">Contact</a></div>
+                                <div className="mb-2"><a href="#" className="text-white hover:text-blue-400 transition duration-300 font-semibold">Careers</a></div>
                             </div>
                         </div>
 

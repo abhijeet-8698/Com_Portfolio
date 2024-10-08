@@ -3,7 +3,7 @@ import React from 'react';
 function WEAREGOOD() {
   return (
     <div>
-      <section className="bg-white text-black" id="seven">
+      <section className="text-black" id="seven">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div className="col-span-1 md:col-span-3">
